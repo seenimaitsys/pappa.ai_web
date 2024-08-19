@@ -7,6 +7,15 @@ body,
 div {
   font-family: poppings-regular;
 }
+.custom-label {
+  font-size: 15px;
+}
+
+.custom-label::after {
+  content: "*"; /* This adds the asterisk */
+  color: red; /* This colors the asterisk red */
+  font-size: inherit; /* Inherit the same font size */
+}
 .lik:hover,
 .activepath {
   background-color: #f3f4ff;
@@ -66,4 +75,23 @@ div {
 .custom_scrollbar::-webkit-scrollbar-thumb {
   background-color: #4a4a4a;
   border: 2px solid #555555;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 0;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.xx {
+  width: 100% !important;
 }

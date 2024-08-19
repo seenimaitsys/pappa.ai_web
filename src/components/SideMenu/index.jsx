@@ -4,6 +4,8 @@ import { hideMenu } from "../../redux/menu/menuSlice";
 import logo from "../../assets/images/pappa.png";
 import { Link, useLocation } from "react-router-dom";
 import { dynamic_MenuData } from "./dynamic_Menu";
+import { useEffect } from "react";
+import { SetNavValue } from "../../redux/navValue/navValueSlice";
 // import { UseGetScreenResolution } from "../../components/GetScreenResolution";
 const SideMenu = () => {
   // path check to apply bg-color in sidenemu
@@ -16,7 +18,9 @@ const SideMenu = () => {
   const showmenubar = useSelector((state) => state.show.sidebarShow);
   const dispatch = useDispatch();
   // const [currentResolution] = UseGetScreenResolution();
-
+  useEffect(() => {
+    dispatch(SetNavValue(path.charAt(1).toUpperCase() + path.slice(2)));
+  }, [path]);
   return (
     <>
       <Navbar
@@ -115,11 +119,12 @@ const SideMenu = () => {
             </Nav>
             <Button
               variant="light"
-              className="ps-4 pe-4 mt-6 mb-2 w-50 text-center"
+              className="ps-4 pe-4 mb-2 w-50 text-center"
               style={{
                 fontSize: "20px",
                 fontWeight: "600",
                 color: "#A131A4",
+                marginTop: "90%",
               }}
             >
               LOGOUT

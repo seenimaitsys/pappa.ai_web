@@ -1,17 +1,16 @@
-import { Container, Row } from "react-bootstrap";
-
 import SchoolEvents from "../../components/SchoolEvents";
 import Gredes from "../../components/Grades";
+import { Row } from "react-bootstrap";
 const DashboardLayout = () => {
   return (
     <>
-      <Container fluid>
-        <Row className={`p-1 ps-md-5 pe-md-5 gap-4`}>
+      <Row className={`d-flex align-items-center justify-content-center h-100`}>
+        <Row className={` gap-4 pt-4 pt-xl-0 pb-4 pb-xl-0`}>
           <Gredes />
 
           <SchoolEvents />
         </Row>
-      </Container>
+      </Row>
     </>
   );
 };

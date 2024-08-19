@@ -11,7 +11,7 @@ const HomeLayout = () => {
           <SideMenu />
           <div className="w-100 bg-app-bg h-100">
             <AppHeader />
-            <div className={`wrapper custom_scrollbar`}>
+            <div className={`wrapper custom_scrollbar p-3`}>
               <AppContent />
             </div>
           </div>

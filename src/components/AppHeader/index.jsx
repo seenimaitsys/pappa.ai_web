@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ShowMenu } from "../../redux/menu/menuSlice";
 import { Col, Container, Image, Navbar } from "react-bootstrap";
 
@@ -8,11 +8,12 @@ import { CgMenuRound } from "react-icons/cg";
 import schoollogo from "../../assets/images/logoweb.png";
 const AppHeader = () => {
   const dispatch = useDispatch();
+  const navValue = useSelector((state) => state.nav.navValue);
   return (
     <>
       <Navbar
-        className="d-flex align-items-center p-0"
-        style={{ height: "90px" }}
+        className="d-flex align-items-center p-0 shadow"
+        style={{ height: "90px", backgroundColor: "#EDF1F7" }}
       >
         <Container
           fluid
@@ -38,7 +39,7 @@ const AppHeader = () => {
               className={`d-flex  flex-column align-items-start justify-content-between`}
             >
               <h2
-                className={`p-0 m-0 fs-5`}
+                className={`p-0 m-0 fs-5 `}
                 style={{
                   color: "black",
                   fontWeight: "700",
@@ -53,7 +54,7 @@ const AppHeader = () => {
                     color: `#303972`,
                   }}
                 >
-                  Dashboard
+                  {navValue}
                 </h2>
               </Col>
             </div>
